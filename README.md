@@ -68,3 +68,39 @@ export default tseslint.config({
   },
 });
 ```
+
+## Vite + React (Plain React App)
+
+Vite doesn't have built-in routing — use react-router-dom to manage it manually. Create a routes/ folder to keep route definitions organised.
+
+```bash
+/src/
+├── App.tsx                # Main router with route config
+├── main.tsx               # Entry point
+│
+├── routes/
+│   ├── Landing.tsx        # "/" - marketing page
+│   ├── Signin.tsx         # "/signin"
+│   ├── Signup.tsx         # "/signup"
+│   ├── Help.tsx           # "/help"
+│   ├── Prices.tsx         # "/prices"
+│
+│   /dashboard/
+│     ├── DashboardHome.tsx   # "/dashboard"
+│     ├── Profile.tsx         # "/dashboard/profile"
+│     └── Settings.tsx        # etc.
+│
+├── components/
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   ├── AuthForm.tsx
+│
+├── hooks/
+│   └── useAuth.ts           # Authentication status
+├── contexts/
+│   └── AuthContext.tsx      # Auth provider
+├── utils/
+│   └── auth.ts              # Token handling, etc.
+```
+
+> Use PrivateRoute wrappers for protected routes inside App.tsx.
