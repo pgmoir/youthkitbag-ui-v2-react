@@ -1,7 +1,8 @@
 import { Helmet, HelmetProvider } from '@dr.pogodin/react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Landing from './routes/Landing';
+import PublicLayout from './layouts/PublicLayout';
+import Home from './routes/Home';
 import Signin from './routes/Signin';
 import DashboardHome from './routes/dashboard/DashboardHome';
 
@@ -20,9 +21,11 @@ function App() {
       </Helmet>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/dashboard" element={<DashboardHome />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
