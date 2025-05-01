@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from '@dr.pogodin/react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import PublicLayout from './layouts/PublicLayout';
-import Home from './routes/Home';
+import LoggedOutLanding from './routes/LoggedOutLanding';
 import Signin from './routes/Signin';
 import DashboardHome from './routes/dashboard/DashboardHome';
 
@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<PublicLayout />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LoggedOutLanding />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/dashboard" element={<DashboardHome />} />
           </Route>
