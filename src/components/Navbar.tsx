@@ -1,12 +1,11 @@
 import { JSX } from 'react';
-import { Link } from 'react-router-dom';
 
 function Navbar(): JSX.Element {
   return (
-    <nav className="nav-container">
-      <Link to="/" className="nav-logo">
+    <nav className="navbar bg-primary text-primary-content">
+      <a href="/" className="link link-hover text-base-300">
         YouthKitbag
-      </Link>
+      </a>
     </nav>
   );
 }
