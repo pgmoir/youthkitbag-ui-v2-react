@@ -29,8 +29,8 @@ function Navbar(): JSX.Element {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/signin" className="btn text-base">
-          Sign In
+        <Link to="/login" className="btn text-base">
+          Log In
         </Link>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -5,13 +5,15 @@ import PublicLayout from './layouts/PublicLayout';
 import Accessibility from './routes/Accessibility';
 import Cookies from './routes/Cookies';
 import DashboardHome from './routes/dashboard/DashboardHome';
+import ForgotPassword from './routes/ForgotPassword';
 import Help from './routes/Help';
 import LoggedOutHome from './routes/LoggedOutHome/LoggedOutHome';
+
+import Login from './routes/Login';
 import Media from './routes/Media';
 import Prices from './routes/Prices';
 import PrivacyPolicy from './routes/PrivacyPolicy';
 import Security from './routes/Security';
-import Signin from './routes/Signin';
 import TermsConditions from './routes/TermsConditions';
 
 function App() {
@@ -31,7 +33,8 @@ function App() {
         <Routes>
           <Route element={<PublicLayout />}>
             <Route path="/" element={<LoggedOutHome />} />
-            <Route path="/signin" element={<Signin />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/prices" element={<Prices />} />
             <Route path="/help" element={<Help />} />
             <Route path="/media" element={<Media />} />

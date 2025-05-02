@@ -82,7 +82,7 @@ Vite doesn't have built-in routing — use react-router-dom to manage it manuall
 │
 ├── routes/
 │   ├── Landing.tsx        # "/" - marketing page
-│   ├── Signin.tsx         # "/signin"
+│   ├── Login.tsx         # "/login"
 │   ├── Signup.tsx         # "/signup"
 │   ├── Help.tsx           # "/help"
 │   ├── Prices.tsx         # "/prices"

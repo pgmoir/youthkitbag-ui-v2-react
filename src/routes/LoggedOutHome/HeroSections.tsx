@@ -166,7 +166,9 @@ export const HeroSectionSignup = () => {
       <div className="hero-content">
         <div className="card bg-base-100 shrink-0 shadow-2xl min-w-lg">
           <div className="card-body">
-            <h2 className="text-3xl font-semibold text-center">Sign Up</h2>
+            <h2 className="text-3xl font-semibold text-center">
+              Let&apos;s get started!
+            </h2>
             <fieldset className="fieldset">
               <label className="label">First Name</label>
               <input
@@ -201,13 +203,13 @@ export const HeroSectionSignup = () => {
               <button className="btn btn-xl btn-primary mt-4 text-base-300 mb-3">
                 Sign Up
               </button>
-              <div className="text-center">
-                <span>If you already have a kitbag, </span>
-                <Link to="/signin" className="link link-hover">
-                  then sign in for access
-                </Link>
-              </div>
             </fieldset>
+            <div className="text-center">
+              <span>If you already have a kitbag, </span>
+              <Link to="/login" className="link">
+                then log in for access
+              </Link>
+            </div>
           </div>
         </div>
       </div>
