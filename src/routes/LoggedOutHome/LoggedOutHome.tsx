@@ -2,7 +2,10 @@ import { JSX } from 'react';
 import {
   HeroSectionGroups,
   HeroSectionOrganise,
+  HeroSectionSignup,
   HeroSectionTitle,
+  HeroSectionTrade,
+  HeroSectionTrust,
 } from './HeroSections';
 
 export default function LoggedOutHome(): JSX.Element {
@@ -11,6 +14,9 @@ export default function LoggedOutHome(): JSX.Element {
       <HeroSectionTitle />
       <HeroSectionOrganise />
       <HeroSectionGroups />
+      <HeroSectionTrust />
+      <HeroSectionTrade />
+      <HeroSectionSignup />
     </div>
   );
 }
