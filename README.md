@@ -2,6 +2,8 @@
 
 I am running three consecutive projects to rebuild my youthkitbag front end from scratch again latest tech techstacks, React, NextJS and Nuxt (Vue based). I want to compare the patterns recommended for building with these tools, and compare how they perform, and how easy it is to build, test and deploy. I want to deploy to free services, and connect to the existing API. I also want the general look and feel to remain consistent with the original, but I want style to be simplified. I have opted to go with tailwindcss (as this seems to be the recommended approach that they all use), and daisyui (for free tailwindcss based components that can be used by all three projects). I don't want to get bogged down with style, but I want a nice clean fresh feel that doesn't get in the way of the structure. I will be building the three projects in parallel, feature by feature, step by step. I've also chosen npm as a consistent approach.
 
+Url is https://youthkitbag-ui-v2-react.vercel.app/
+
 This is a [React](https://react.dev/) project bootstrapped with [`npm create vite@latest`](https://react.dev/learn/build-a-react-app-from-scratch).
 
 ## Recommended Way to Start latest React
@@ -124,3 +126,9 @@ export default defineConfig({
 ## Implement DaisyUI (with TailwindCSS)
 
 I wanted to keep the actual html structure very consistent across the projects, so to facilitate component development I chose DaisyUI which seems to be the only free component library based on tailwindcss that can be used across the board.
+
+## Hook up GitHub repository to Vercel
+
+To keep costs to zero (or at least a minimum), I have deployed this website to Vercel. I have opted at this stage to make it easy and link the GitHub repository direct in Vercel, so that any changes pushed will automatically deploy.
+
+https://youthkitbag-ui-v2-react.vercel.app/
