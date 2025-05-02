@@ -1,6 +1,6 @@
 export const HeroSectionTitle = () => {
   return (
-    <div className="hero min-h-180">
+    <section id="title" className="hero min-h-180">
       <div className="hero-content text-center">
         <div className="max-w-lg">
           <h1 className="text-5xl font-semibold">
@@ -18,13 +18,13 @@ export const HeroSectionTitle = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export const HeroSectionOrganise = () => {
   return (
-    <div className="hero bg-base-200 min-h-180">
+    <section id="kitbags" className="hero bg-base-200 min-h-180">
       <div className="hero-content flex-col md:flex-row max-w-240">
         <img src="/images/organise.svg" className="max-w-sm p-3" />
         <div>
@@ -39,13 +39,13 @@ export const HeroSectionOrganise = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export const HeroSectionGroups = () => {
   return (
-    <div className="hero min-h-180">
+    <section id="groups" className="hero min-h-180">
       <div className="hero-content flex-col md:flex-row-reverse max-w-240">
         <img src="/images/groups.svg" className="max-w-sm p-3" />
         <div>
@@ -66,13 +66,13 @@ export const HeroSectionGroups = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export const HeroSectionTrust = () => {
   return (
-    <div className="hero bg-base-300 min-h-180">
+    <section id="trust" className="hero bg-base-300 min-h-180">
       <div className="hero-content flex-col max-w-240">
         <h2 className="text-5xl font-semibold text-center">Trust in Groups</h2>
         <div className="flex lg:flex-row flex-col">
@@ -117,13 +117,13 @@ export const HeroSectionTrust = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export const HeroSectionTrade = () => {
   return (
-    <div className="hero min-h-180">
+    <section id="market" className="hero min-h-180">
       <div className="hero-content flex-col md:flex-row max-w-240">
         <img src="/images/trade.svg" className="max-w-sm p-3" />
         <div>
@@ -142,13 +142,13 @@ export const HeroSectionTrade = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export const HeroSectionSignup = () => {
   return (
-    <div className="hero bg-primary min-h-180">
+    <section id="signup" className="hero bg-primary min-h-180">
       <div className="hero-content">
         <div className="card bg-base-100 shrink-0 shadow-2xl min-w-lg">
           <div className="card-body">
@@ -195,6 +195,6 @@ export const HeroSectionSignup = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
