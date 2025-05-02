@@ -1,32 +1,37 @@
 import { JSX } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar(): JSX.Element {
   return (
     <nav className="navbar bg-neutral text-neutral-content">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">YouthKitbag</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          YouthKitbag
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base">
           <li>
-            <a href="#kitbags">Kitbags</a>
+            <Link to="/#kitbags">Kitbags</Link>
           </li>
           <li>
-            <a href="#groups">Groups</a>
+            <NavLink to="/#groups">Groups</NavLink>
           </li>
           <li>
-            <a href="#trust">Trust</a>
+            <Link to="/#trust">Trust</Link>
           </li>
           <li>
-            <a href="#market">Market</a>
+            <Link to="/#market">Market</Link>
           </li>
           <li>
-            <a href="#signup">Sign Up</a>
+            <Link to="/#signup">Sign Up</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-base">Sign In</a>
+        <Link to="/signin" className="btn text-base">
+          Sign In
+        </Link>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -50,19 +55,19 @@ function Navbar(): JSX.Element {
             className="menu dropdown-content bg-neutral text-neutral-content rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a href="#kitbags">Kitbags</a>
+              <Link to="/#kitbags">Kitbags</Link>
             </li>
             <li>
-              <a href="#groups">Groups</a>
+              <Link to="/#groups">Groups</Link>
             </li>
             <li>
-              <a href="#trust">Trust</a>
+              <Link to="/#trust">Trust</Link>
             </li>
             <li>
-              <a href="#market">Market</a>
+              <Link to="/#market">Market</Link>
             </li>
             <li>
-              <a href="#signup">Sign Up</a>
+              <Link to="/#signup">Sign Up</Link>
             </li>
           </ul>
         </div>

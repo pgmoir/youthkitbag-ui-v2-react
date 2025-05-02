@@ -1,4 +1,5 @@
 import { JSX } from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(): JSX.Element {
   return (
@@ -23,21 +24,39 @@ function Footer(): JSX.Element {
       </aside>
       <nav>
         <h6 className="footer-title">About YouthKitbag</h6>
-        <a className="link link-hover">Buy a Bundle</a>
-        <a className="link link-hover">Help</a>
-        <a className="link link-hover">Media</a>
+        <Link to="/prices" className="link link-hover">
+          Buy a Bundle
+        </Link>
+        <Link to="/help" className="link link-hover">
+          Help
+        </Link>
+        <Link to="/media" className="link link-hover">
+          Media
+        </Link>
       </nav>
       <nav>
         <h6 className="footer-title">Information for</h6>
-        <a className="link link-hover">Terms & Conditions</a>
-        <a className="link link-hover">Privacy Policy</a>
-        <a className="link link-hover">Cookies</a>
-        <a className="link link-hover">Security</a>
-        <a className="link link-hover">Accessibility</a>
+        <Link to="/terms-conditions" className="link link-hover">
+          Terms & Conditions
+        </Link>
+        <Link to="/privacy-policy" className="link link-hover">
+          Privacy Policy
+        </Link>
+        <Link to="/cookies" className="link link-hover">
+          Cookies
+        </Link>
+        <Link to="/security" className="link link-hover">
+          Security
+        </Link>
+        <Link to="/accessibility" className="link link-hover">
+          Accessibility
+        </Link>
       </nav>
       <nav>
         <h6 className="footer-title">Contact details</h6>
-        <a className="link link-hover">pgmoir@gmail.com</a>
+        <Link to="mailto:pgmoir@gmail.com" className="link link-hover">
+          pgmoir@gmail.com
+        </Link>
       </nav>
     </footer>
   );

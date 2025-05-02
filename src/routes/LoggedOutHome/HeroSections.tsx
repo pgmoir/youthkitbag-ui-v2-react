@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const HeroSectionTitle = () => {
   return (
     <section id="title" className="hero min-h-180">
@@ -13,9 +15,12 @@ export const HeroSectionTitle = () => {
             trade or share with the people you know and trust when it is no
             longer needed, lost or stolen.
           </p>
-          <button className="btn btn-lg btn-wide btn-primary text-base-300 rounded-full">
+          <a
+            href="#signup"
+            className="btn btn-lg btn-wide btn-primary text-base-300 rounded-full"
+          >
             Get Started
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -34,9 +39,12 @@ export const HeroSectionOrganise = () => {
             Store and track your sports, musical, school or whatever kit your
             children need or have.
           </p>
-          <button className="btn btn-lg btn-wide btn-success rounded-full">
+          <a
+            href="#signup"
+            className="btn btn-lg btn-wide btn-success rounded-full"
+          >
             Join Youthkitbag
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -60,9 +68,12 @@ export const HeroSectionGroups = () => {
             children are members of or attend.
           </p>
           <div className="flex justify-end">
-            <button className="btn btn-lg btn-wide btn-success rounded-full">
+            <a
+              href="#signup"
+              className="btn btn-lg btn-wide btn-success rounded-full"
+            >
               Join Youthkitbag
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -137,9 +148,12 @@ export const HeroSectionTrade = () => {
             used kit, share the info quickly with the people most likely to
             help,
           </p>
-          <button className="btn btn-lg btn-wide btn-success rounded-full">
+          <a
+            href="#signup"
+            className="btn btn-lg btn-wide btn-success rounded-full"
+          >
             Join Youthkitbag
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -189,7 +203,9 @@ export const HeroSectionSignup = () => {
               </button>
               <div className="text-center">
                 <span>If you already have a kitbag, </span>
-                <a className="link link-hover">then login for access</a>
+                <Link to="/signin" className="link link-hover">
+                  then sign in for access
+                </Link>
               </div>
             </fieldset>
           </div>
