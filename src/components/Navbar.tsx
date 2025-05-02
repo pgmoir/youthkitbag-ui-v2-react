@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Navbar(): JSX.Element {
   return (
-    <nav className="navbar bg-neutral text-neutral-content">
+    <nav className="sticky top-0 z-50 navbar bg-neutral text-neutral-content">
       <div className="navbar-start">
         <Link to="/" className="btn btn-ghost text-xl">
           YouthKitbag
