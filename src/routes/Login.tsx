@@ -1,12 +1,14 @@
 'use client';
 
 import { JSX, useActionState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { loginAction, LoginActionState } from '../server/login';
 
 function Login(): JSX.Element {
+  const navigate = useNavigate();
+
   const [state, formAction, isPending] = useActionState<
     LoginActionState,
     FormData
@@ -16,7 +18,18 @@ function Login(): JSX.Element {
     if (state?.errorMessage) {
       toast.error(state?.errorMessage);
     }
-  }, [state]);
+  }, [state?.errorMessage]);
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success('Login successful! Redirecting...', {
+        autoClose: 500, // pause for half a second to confirm
+        onClose: () => {
+          navigate('/dashbard');
+        },
+      });
+    }
+  }, [state?.success, state?.message, navigate]);
 
   return (
     <section id="login" className="hero min-h-180">
