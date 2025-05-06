@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
+import AuthNavbar from '../components/AuthNavbar';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
 
-export default function PublicLayout() {
+export default function AuthLayout() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
+      <AuthNavbar />
+      <main className="flex-grow h-fit">
         <Outlet /> {/* This renders the current page */}
       </main>
       <Footer />

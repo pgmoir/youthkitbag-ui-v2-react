@@ -1,4 +1,30 @@
+import { JSX, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+export default function Landing(): JSX.Element {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
+  return (
+    <div>
+      <HeroSectionTitle />
+      <HeroSectionOrganise />
+      <HeroSectionGroups />
+      <HeroSectionTrust />
+      <HeroSectionTrade />
+      <HeroSectionSignup />
+    </div>
+  );
+}
 
 export const HeroSectionTitle = () => {
   return (

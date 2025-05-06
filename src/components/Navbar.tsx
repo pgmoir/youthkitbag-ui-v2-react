@@ -29,7 +29,7 @@ function Navbar(): JSX.Element {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn text-base">
+        <Link to="/log-in" className="btn text-base">
           Log In
         </Link>
         <div className="dropdown dropdown-end">

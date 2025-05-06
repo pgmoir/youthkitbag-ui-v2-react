@@ -1,9 +1,11 @@
 'use server';
+
 import 'react-toastify/dist/ReactToastify.css';
 import { z } from 'zod';
+import { FormActionState } from '../definitions/FormActionState';
 
 // Define schema with Zod
-export const LoginFormSchema = z.object({
+export const LogInFormSchema = z.object({
   email: z
     .string({ required_error: 'Email is required' })
     .nonempty('Email is required')
@@ -15,25 +17,16 @@ export const LoginFormSchema = z.object({
 });
 
 // Infer the type from the schema
-type LoginFormData = z.infer<typeof LoginFormSchema>;
-
-// Define the action state type
-export type LoginActionState = {
-  data?: LoginFormData;
-  success: boolean;
-  errorMessage?: string;
-  errors?: Record<string, string>;
-  message?: string;
-};
+export type LogInFormData = z.infer<typeof LogInFormSchema>;
 
 // Simulated async server action (like calling an API)
-export const loginAction = async (
-  _: LoginActionState,
+export const logInAction = async (
+  _: FormActionState<LogInFormData>,
   formData: FormData
-): Promise<LoginActionState> => {
+): Promise<FormActionState<LogInFormData>> => {
   try {
-    const payload = Object.fromEntries(formData.entries()) as LoginFormData;
-    const { success, data, error } = LoginFormSchema.safeParse(payload);
+    const payload = Object.fromEntries(formData.entries()) as LogInFormData;
+    const { success, data, error } = LogInFormSchema.safeParse(payload);
 
     if (!success) {
       const rawErrors = error.flatten().fieldErrors;

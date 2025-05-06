@@ -4,15 +4,19 @@ import { JSX, useActionState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { loginAction, LoginActionState } from '../server/login';
+import {
+  type FormActionState,
+  signUpAction,
+  type SignUpFormData,
+} from '../../server/signupAction';
 
-function Login(): JSX.Element {
+function SignUp(): JSX.Element {
   const navigate = useNavigate();
 
   const [state, formAction, isPending] = useActionState<
-    LoginActionState,
+    FormActionState<SignUpFormData>,
     FormData
-  >(loginAction, { success: false });
+  >(signUpAction, { success: false });
 
   useEffect(() => {
     if (state?.errorMessage) {
@@ -22,25 +26,53 @@ function Login(): JSX.Element {
 
   useEffect(() => {
     if (state?.success) {
-      toast.success('Login successful! Redirecting...', {
+      toast.success('Signup successful! Redirecting...', {
         autoClose: 500, // pause for half a second to confirm
         onClose: () => {
-          navigate('/dashbard');
+          navigate('/dashboard');
         },
       });
     }
   }, [state?.success, state?.message, navigate]);
 
   return (
-    <section id="login" className="hero min-h-180">
+    <section id="signup" className="hero min-h-180">
       <div className="hero-content">
         <div className="card bg-base-300 shrink-0 shadow-2xl min-w-lg">
           <div className="card-body">
             <h2 className="text-3xl font-semibold text-center">
-              Access your kitbags!
+              Let&apos;s get started!
             </h2>
             <form className="mb-2" action={formAction}>
               <fieldset className="fieldset">
+                <div>
+                  <legend className="fieldset-legend">First Name</legend>
+                  <input
+                    name="firstName"
+                    className="input w-full"
+                    placeholder="Enter your first name"
+                    defaultValue={state.data?.firstName}
+                  />
+                  {state?.errors?.firstName && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {state.errors.firstName}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <legend className="fieldset-legend">Last Name</legend>
+                  <input
+                    name="lastName"
+                    className="input w-full"
+                    placeholder="Enter your last name"
+                    defaultValue={state.data?.lastName}
+                  />
+                  {state?.errors?.lastName && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {state.errors.lastName}
+                    </p>
+                  )}
+                </div>
                 <div>
                   <legend className="fieldset-legend">Email</legend>
                   <input
@@ -76,7 +108,11 @@ function Login(): JSX.Element {
                   className="btn btn-xl btn-primary mt-4 text-base-300"
                   disabled={isPending}
                 >
-                  {isPending ? <span>Logging in...</span> : <span>Log In</span>}
+                  {isPending ? (
+                    <span>Signing up...</span>
+                  ) : (
+                    <span>Sign Up</span>
+                  )}
                 </button>
               </fieldset>
               {state?.errorMessage && (
@@ -86,15 +122,9 @@ function Login(): JSX.Element {
               )}
             </form>
             <div className="text-center">
-              <span>If you don&apos;t have an account, </span>
-              <Link to="/#signup" className="link">
-                then sign up for a new account.
-              </Link>
-            </div>
-            <div className="text-center">
-              <span>Or for the forgetful, </span>
-              <Link to="/forgot-password" className="link">
-                then reset your password.
+              <span>If you already have a kitbag, </span>
+              <Link to="/log-in" className="link">
+                then log in for access
               </Link>
             </div>
           </div>
@@ -104,4 +134,4 @@ function Login(): JSX.Element {
   );
 }
 
-export default Login;
+export default SignUp;

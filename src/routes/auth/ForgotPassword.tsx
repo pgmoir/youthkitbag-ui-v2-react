@@ -17,7 +17,7 @@ function ForgotPassword(): JSX.Element {
                 aware that this link is time limited, and will expire in an hour
                 after sending. If actually you know your password,{' '}
               </span>
-              <Link to="/login" className="link">
+              <Link to="/log-in" className="link">
                 log in direct to your kitbag.
               </Link>
             </div>
