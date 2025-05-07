@@ -8,8 +8,8 @@ import Landing from './routes/public/Landing';
 
 import AuthLayout from './layouts/AuthLayout';
 import DashboardLayout from './layouts/DashboardLayout';
-import LogIn from './routes/auth/Login';
-import SignUp from './routes/auth/Signup';
+import LogIn from './routes/auth/LogIn';
+import SignUp from './routes/auth/SignUp';
 import Content from './routes/public/Content';
 import Prices from './routes/public/Prices';
 

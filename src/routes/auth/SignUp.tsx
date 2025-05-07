@@ -4,11 +4,8 @@ import { JSX, useActionState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {
-  type FormActionState,
-  signUpAction,
-  type SignUpFormData,
-} from '../../server/signupAction';
+import { type FormActionState } from '../../definitions/FormActionState';
+import { signUpAction, type SignUpFormData } from '../../server/signUpAction';
 
 function SignUp(): JSX.Element {
   const navigate = useNavigate();
